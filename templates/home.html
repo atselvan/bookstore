@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#9da489] min-h-screen flex flex-col">
+        <nav class="bg-[#2c190c]">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="http://localhost:8080/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="../static/images/logo.png" class="h-12 rounded-lg" alt="Bookstore Logo" />
+                <span class="self-center text-2xl text-[#eadbc5] font-semibold whitespace-nowrap">BookStore</span>
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center p-2 w-12 h-10 justify-center text-sm text-[#eadbc5] rounded-lg md:hidden hover:text-[#9da489] focus:outline-none focus:ring-2 focus:text-[#9da489] focus:ring-[#9da489]"
+                aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg bg-[#eadbc5] md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-[#2c190c]">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-[#eadbc5] bg-[#5d6650] rounded-sm md:bg-transparent md:text-[#9da489] md:p-0"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-[#2c190c] rounded-sm md:text-[#eadbc5] hover:bg-[#9da489] md:hover:bg-transparent md:border-0 md:hover:text-[#9da489] md:p-0">About</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-[#2c190c] rounded-sm md:text-[#eadbc5] hover:bg-[#9da489] md:hover:bg-transparent md:border-0 md:hover:text-[#9da489] md:p-0">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.querySelector('[data-collapse-toggle="navbar-default"]');
+            const navbar = document.getElementById('navbar-default');
+            if (toggleBtn && navbar) {
+                toggleBtn.addEventListener('click', function () {
+                    navbar.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+    <main class="flex flex-col items-center justify-center p-6">
+        <div class="bg-[#eadbc5] p-10 gap-6 w-full max-w-lg  rounded-lg">
+            <h1 class="text-[#2c190c] text-3xl font-semibold mb-8 text-center">Welcome, { .User.Name }</h1>
+        </div>
+    </main>
+
+    <footer class="bg-[#5d6650] text-[#eadbc5] text-center py-4 mt-auto w-full">
+        © 2025 Bookstore™. All Rights Reserved.
+    </footer>
+</body>
+
+</html>
